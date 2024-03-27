@@ -13,7 +13,7 @@ import testAutomation.utils.PropertyManager;
 import java.net.MalformedURLException;
 import java.util.List;
 
-public class DemoQACSS {
+public class DemoQAXPath {
 
     public static WebDriver driver;
     Driver webDriver = new Driver();
@@ -28,13 +28,13 @@ public class DemoQACSS {
 
     @Test
     public void ClickMeButtonsTest() {
-        WebElement buttons = driver.findElement(new By.ByCssSelector(".collapse.element-list.show > .menu-list > li:nth-of-type(5)"));
+        WebElement buttons = driver.findElement(new By.ByXPath("//span[text()='Buttons']"));
         buttons.click();
 
-        WebElement clickMe = driver.findElement(new By.ByCssSelector("div:nth-child(4)>button"));
+        WebElement clickMe = driver.findElement(new By.ByXPath("//button[text()='Click Me']"));
         clickMe.click();
 
-        WebElement txtMessage = driver.findElement(new By.ByCssSelector("#dynamicClickMessage"));
+        WebElement txtMessage = driver.findElement(new By.ByXPath("//p[@id='dynamicClickMessage']"));
         System.out.println(txtMessage.getText());
 
     }
@@ -42,48 +42,48 @@ public class DemoQACSS {
     @Test
     public void addRecordTest() throws InterruptedException {
 
-        WebElement clickWebtables = driver.findElement(new By.ByCssSelector(".collapse.element-list.show > .menu-list > li:nth-of-type(4)"));
+        WebElement clickWebtables = driver.findElement(new By.ByXPath("//span[text()='Web Tables']"));
         clickWebtables.click();
 
-        WebElement addButton = driver.findElement(new By.ByCssSelector("button#addNewRecordButton"));
+        WebElement addButton = driver.findElement(new By.ByXPath("//button[@id='addNewRecordButton']"));
         addButton.click();
 
-        WebElement firstName = driver.findElement(new By.ByCssSelector("#firstName"));
+        WebElement firstName = driver.findElement(new By.ByXPath("//input[@id='firstName']"));
         firstName.sendKeys("Kübra");
 
-        WebElement lastName = driver.findElement(new By.ByCssSelector("#lastName"));
+        WebElement lastName = driver.findElement(new By.ByXPath("//input[@id='lastName']"));
         lastName.sendKeys("Dikmen");
 
-        WebElement email = driver.findElement(new By.ByCssSelector("#userEmail"));
+        WebElement email = driver.findElement(new By.ByXPath("//input[@id='userEmail']"));
         email.sendKeys("kubradikmen@mail.com");
 
-        WebElement age = driver.findElement(new By.ByCssSelector("#age"));
+        WebElement age = driver.findElement(new By.ByXPath("//input[@id='age']"));
         age.sendKeys("27");
 
-        WebElement salary = driver.findElement(new By.ByCssSelector("#salary"));
+        WebElement salary = driver.findElement(new By.ByXPath("//input[@id='salary']"));
         salary.sendKeys("123455");
 
-        WebElement department = driver.findElement(new By.ByCssSelector("#department"));
+        WebElement department = driver.findElement(new By.ByXPath("//input[@id='department']"));
         department.sendKeys("Test");
 
-        WebElement btnSubmit = driver.findElement(new By.ByCssSelector("#submit"));
+        WebElement btnSubmit = driver.findElement(new By.ByXPath("//button[@id='submit']"));
         btnSubmit.click();
 
         Thread.sleep(10000);
 
         //EDİT İŞLEMİ
 
-        WebElement btnEdit = driver.findElement(new By.ByCssSelector("#edit-record-4"));
+        WebElement btnEdit = driver.findElement(new By.ByXPath("//span[@id='edit-record-4']"));
         btnEdit.click();
 
         Thread.sleep(5000);
 
-        WebElement UpdateAge = driver.findElement(new By.ByCssSelector("#age"));
+        WebElement UpdateAge = driver.findElement(new By.ByXPath("//input[@id='age']"));
 
         UpdateAge.clear();
         UpdateAge.sendKeys("28");
 
-        WebElement btnAfterEdit = driver.findElement(new By.ByCssSelector("#submit"));
+        WebElement btnAfterEdit = driver.findElement(new By.ByXPath("//button[@id='submit']"));
         btnAfterEdit.click();
 
 
