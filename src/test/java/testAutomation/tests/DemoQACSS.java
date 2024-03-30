@@ -27,6 +27,12 @@ public class DemoQACSS {
     }
 
     @Test
+    public void openDemoQaTest() {
+        String pageTitle = driver.getTitle();
+        Assert.assertEquals(pageTitle,"DEMOQA");
+    }
+
+    @Test
     public void ClickMeButtonsTest() {
         WebElement buttons = driver.findElement(new By.ByCssSelector(".collapse.element-list.show > .menu-list > li:nth-of-type(5)"));
         Assert.assertNotNull(buttons);
@@ -72,6 +78,9 @@ public class DemoQACSS {
         WebElement btnSubmit = driver.findElement(new By.ByCssSelector("#submit"));
         btnSubmit.click();
 
+        WebElement name = driver.findElement(new By.ByCssSelector("div:nth-of-type(4) > div[role='row'] > div:nth-of-type(1)"));
+        Assert.assertEquals(name.getText(),"Kübra");
+
         Thread.sleep(10000);
 
         //EDİT İŞLEMİ
@@ -88,6 +97,9 @@ public class DemoQACSS {
 
         WebElement btnAfterEdit = driver.findElement(new By.ByCssSelector("#submit"));
         btnAfterEdit.click();
+
+        WebElement updateName = driver.findElement(new By.ByCssSelector("div:nth-of-type(4) > div[role='row'] > div:nth-of-type(3)"));
+        Assert.assertEquals(updateName.getText(),"28");
 
     }
 

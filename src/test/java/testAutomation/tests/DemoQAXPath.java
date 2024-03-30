@@ -27,6 +27,12 @@ public class DemoQAXPath {
     }
 
     @Test
+    public void openDemoQaTest() {
+        String pageTitle = driver.getTitle();
+        Assert.assertEquals(pageTitle,"DEMOQA");
+    }
+
+    @Test
     public void ClickMeButtonsTest() {
         WebElement buttons = driver.findElement(new By.ByXPath("//span[text()='Buttons']"));
         Assert.assertNotNull(buttons);
@@ -39,7 +45,6 @@ public class DemoQAXPath {
         WebElement txtMessage = driver.findElement(new By.ByXPath("//p[@id='dynamicClickMessage']"));
         System.out.println(txtMessage.getText());
         Assert.assertEquals(txtMessage.getText(), "You have done a dynamic click");
-
     }
 
     @Test
@@ -72,6 +77,9 @@ public class DemoQAXPath {
         WebElement btnSubmit = driver.findElement(new By.ByXPath("//button[@id='submit']"));
         btnSubmit.click();
 
+        WebElement name = driver.findElement(new By.ByXPath("//div[text()='Kübra']"));
+        Assert.assertEquals(name.getText(),"Kübra");
+
         Thread.sleep(10000);
 
         //EDİT İŞLEMİ
@@ -88,6 +96,9 @@ public class DemoQAXPath {
 
         WebElement btnAfterEdit = driver.findElement(new By.ByXPath("//button[@id='submit']"));
         btnAfterEdit.click();
+
+        WebElement updateName = driver.findElement(new By.ByXPath("//div[text()='28']"));
+        Assert.assertEquals(updateName.getText(),"28");
 
     }
 
