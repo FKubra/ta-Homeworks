@@ -29,13 +29,16 @@ public class DemoQAXPath {
     @Test
     public void ClickMeButtonsTest() {
         WebElement buttons = driver.findElement(new By.ByXPath("//span[text()='Buttons']"));
+        Assert.assertNotNull(buttons);
         buttons.click();
 
         WebElement clickMe = driver.findElement(new By.ByXPath("//button[text()='Click Me']"));
+        Assert.assertNotNull(clickMe);
         clickMe.click();
 
         WebElement txtMessage = driver.findElement(new By.ByXPath("//p[@id='dynamicClickMessage']"));
         System.out.println(txtMessage.getText());
+        Assert.assertEquals(txtMessage.getText(), "You have done a dynamic click");
 
     }
 
@@ -85,8 +88,6 @@ public class DemoQAXPath {
 
         WebElement btnAfterEdit = driver.findElement(new By.ByXPath("//button[@id='submit']"));
         btnAfterEdit.click();
-
-
 
     }
 

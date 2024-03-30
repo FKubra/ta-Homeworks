@@ -29,13 +29,16 @@ public class DemoQACSS {
     @Test
     public void ClickMeButtonsTest() {
         WebElement buttons = driver.findElement(new By.ByCssSelector(".collapse.element-list.show > .menu-list > li:nth-of-type(5)"));
+        Assert.assertNotNull(buttons);
         buttons.click();
 
         WebElement clickMe = driver.findElement(new By.ByCssSelector("div:nth-child(4)>button"));
+        Assert.assertNotNull(clickMe);
         clickMe.click();
 
         WebElement txtMessage = driver.findElement(new By.ByCssSelector("#dynamicClickMessage"));
         System.out.println(txtMessage.getText());
+        Assert.assertEquals(txtMessage.getText(), "You have done a dynamic click");
 
     }
 
@@ -85,8 +88,6 @@ public class DemoQACSS {
 
         WebElement btnAfterEdit = driver.findElement(new By.ByCssSelector("#submit"));
         btnAfterEdit.click();
-
-
 
     }
 
