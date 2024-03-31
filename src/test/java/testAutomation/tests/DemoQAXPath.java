@@ -97,8 +97,8 @@ public class DemoQAXPath {
         WebElement btnAfterEdit = driver.findElement(new By.ByXPath("//button[@id='submit']"));
         btnAfterEdit.click();
 
-        WebElement updateName = driver.findElement(new By.ByXPath("//div[text()='28']"));
-        Assert.assertEquals(updateName.getText(),"28");
+        WebElement updatedAge = driver.findElement(new By.ByXPath("//div[text()='28']"));
+        Assert.assertEquals(updatedAge.getText(),"28");
 
     }
 

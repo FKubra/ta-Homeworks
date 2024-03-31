@@ -98,8 +98,8 @@ public class DemoQACSS {
         WebElement btnAfterEdit = driver.findElement(new By.ByCssSelector("#submit"));
         btnAfterEdit.click();
 
-        WebElement updateName = driver.findElement(new By.ByCssSelector("div:nth-of-type(4) > div[role='row'] > div:nth-of-type(3)"));
-        Assert.assertEquals(updateName.getText(),"28");
+        WebElement updatedAge = driver.findElement(new By.ByCssSelector("div:nth-of-type(4) > div[role='row'] > div:nth-of-type(3)"));
+        Assert.assertEquals(updatedAge.getText(),"28");
 
     }
 
